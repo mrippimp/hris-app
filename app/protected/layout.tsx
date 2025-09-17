@@ -2,15 +2,19 @@ import Navbar from "@/components/layout/navbar";
 import AppSidebar from "@/components/layout/app-sidebar";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { cookies } from "next/headers";
 
-export default function ProtectedLayout({
+export default async function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+
   return (
     <div className="flex">
-      <SidebarProvider>
+      <SidebarProvider defaultOpen={defaultOpen}>
         <AppSidebar />
         <main className="flex flex-col items-start w-11/12 min-h-screen">
           <Navbar />
