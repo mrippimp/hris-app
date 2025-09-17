@@ -119,40 +119,8 @@ const AppSidebar = () => {
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {/* {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>
-                      <item.icon />
-                      {item.title}
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))} */}
               {items.map((item) =>
                 item.subMenus ? (
-                  // <Collapsible className="group/collapsible">
-                  //   <SidebarGroup>
-                  //     <SidebarGroupLabel asChild>
-                  //       <CollapsibleTrigger>
-                  //         {item.title}{" "}
-                  //         <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
-                  //       </CollapsibleTrigger>
-                  //     </SidebarGroupLabel>
-                  //     <CollapsibleContent>
-                  //       {item.subMenus?.map((subMenu) => (
-                  //         <SidebarMenuItem key={subMenu.title}>
-                  //           <SidebarMenuButton asChild>
-                  //             <Link href={subMenu.url}>
-                  //               <subMenu.icon />
-                  //               {subMenu.title}
-                  //             </Link>
-                  //           </SidebarMenuButton>
-                  //         </SidebarMenuItem>
-                  //       ))}
-                  //     </CollapsibleContent>
-                  //   </SidebarGroup>
-                  // </Collapsible>
                   <Collapsible className="group/collapsible">
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton asChild>
