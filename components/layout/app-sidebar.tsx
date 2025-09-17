@@ -121,8 +121,8 @@ const AppSidebar = () => {
             <SidebarMenu>
               {items.map((item) =>
                 item.subMenus ? (
-                  <Collapsible className="group/collapsible">
-                    <SidebarMenuItem key={item.title}>
+                  <Collapsible key={item.title} className="group/collapsible">
+                    <SidebarMenuItem>
                       <SidebarMenuButton asChild>
                         <CollapsibleTrigger>
                           <item.icon />
@@ -133,8 +133,8 @@ const AppSidebar = () => {
                     </SidebarMenuItem>
                     <CollapsibleContent>
                       {item.subMenus?.map((subMenu) => (
-                        <SidebarMenuSub>
-                          <SidebarMenuSubItem key={subMenu.title}>
+                        <SidebarMenuSub key={subMenu.title}>
+                          <SidebarMenuSubItem>
                             <SidebarMenuSubButton asChild>
                               <Link href={subMenu.url}>
                                 <subMenu.icon />
